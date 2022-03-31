@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<style>
+
+/* СЛАЙДЕРслайдерСЛАЙДЕРслайдерСЛАЙДЕРслайдерСЛАЙДЕРслайдер*/
+.slider {width: 1000px; margin: 50px auto;}
+.slider input[name="switch"] {  display: none; }
+.switch { display: inline-block; left: 0;
+text-align: center; width: 50%;}
+.switch label { display: inline-block;width: 15px;
+height: 15px; cursor: pointer; margin: 0 8px;
+border-radius: 50%; background-color: #808080;}
+#btn1:checked~.switch label[for="btn1"] { /*Вид активной кнопки*/
+  background-color: #36f;   width: 25px;  border-radius: 40%;}
+#btn2:checked~.switch label[for="btn2"] {
+  background-color: #36f;   width: 25px;   border-radius: 40%;}
+#btn3:checked~.switch label[for="btn3"] {
+  background-color: #36f;   width: 25px;   border-radius: 40%;}
+#btn4:checked~.switch label[for="btn4"] {
+  background-color: #36f;  width: 25px;  border-radius: 40%;}
+.slider-inner {  overflow: hidden;}
+.slides {  width: 400%;  transition: all 0.5s;}
+.slides div {  width: 1000px;  height: 340px;  float: left;}
+#btn1:checked~slider-inner slides { transform: translate(0); }
+#btn2:checked~.slider-inner .slides { transform: translate(-1000px); }
+#btn3:checked~.slider-inner .slides { transform: translate(-2000px); }
+#btn4:checked~.slider-inner .slides { transform: translate(-3000px); }
+#slaid h1{ line-height: 0.5; top:200px; left:60px
+color:#fcfff4; font-size:60px; font-style:normal }
+#slaid p{ line-height: 1.5;top:200px;left:60px color:#fcfff4;
+font-size:20px; font-style:normal }
+/* СЛАЙДЕРслайдерСЛАЙДЕРслайдерСЛАЙДЕРслайдерСЛАЙДЕРслайдер*/
+
+/* ТЕЛОтелоТЕЛОтелоТЕЛОтелоТЕЛОтелоТЕЛОтелоТЕЛОтело*/
+body { 	margin: 0;	width: 100%;
+font-family:Tanseek Modern Arabic Medium; }
+body  p { color: #999999;	line-height:1.3;}
+body  h1 { color: #333;}
+/* ТЕЛОтелоТЕЛОтелоТЕЛОтелоТЕЛОтелоТЕЛОтелоТЕЛОтело*/
+
+/* ШАПКАшапкаШАПКАшапкаШАПКАшапкаШАПКАшапкаШАПКАшапка*/
+#header { height: 100px;  z-index: 1; background-color: #FFF;}
+#header.fixed{ position: fixed; top: 0; width: 100%;}
+#navigation{ height: 80px;font-size: 16px;}
+#navigation ul{ padding-left: 26%; padding-top: 30px;
+margin: 0 auto; display: block; }
+#menu li{ float: left; list-style: none; padding: 0 25px;}
+#menu a { color:  #1E1E1E; text-decoration: none; }
+#menu>li a:hover{ color: #212121; transition: color 0.5s ease; }
+#logo { color - text: 	#1E1E1E; margin-left:100px; margin-top: 10px;
+position: absolute; margin-right:60px; }
+#logo h1{ line-height:0; margin-left: 0px; }		
+#logo p{ line-height:0; margin-left: 30px; font-size: 18px;}
+#knopki { position: absolute; right:50px; top:10px; }
+#knopki p { display: inline-block; margin-left: 15px; }
+button { display: inline-block; padding: .5em 2em; border-radius: 40px;
+transition: 0.2s; font-size: 14px; margin-top: 10px } 
+button:hover { background-color: #00BFFF; }
+button:active { background-color: #1E90FF; }
+/*ШАПКАшапкаШАПКАшапкаШАПКАшапкаШАПКАшапкаШАПКАшапкаШАПКАшапкаШАПКАшапка*/
+
+/*ABOUTABOUTABOUTABOUTABOUTABOUTABOUTABOUT*/
+#ABOUT { padding: 50px 50px 15px; height: 470px;
+padding-top: 20px;}  
+#picture { float: left;}
+#kontent { margin-left: 500px; }
+#picture img { margin-right: 50px;
+height: auto; width: 600px; }
+#texstk { text-align: justify; }
+/*ABOUTABOUTABOUTABOUTABOUTABOUTABOUTABOUT*/
+
+/*PRICINGPRICINGPRICINGPRICING*/
+#karta{ float: right; display: block; width: 23.4%;
+border-radius: 1%; margin-right: 25px;
+box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75); }
+#c{ display: inline-block;
+width: 49%; padding: 1%;
+line-height:0; padding:0;
+text-align: center; font-size:20px;}
+#c1{ display: inline-block; width: 47%; padding: 1%;
+text-align: center; line-height: 0;
+font-stretch:  ultra-condensed ;
+font-size: 38px; font-stretch: condensed; }
+#PRICING{ padding: 50px 50px 15px; height: 600px;}
+#karta li{ color:#99f; padding-right: 10px;
+padding-left: 5px; }
+#karta ul{ font-size: 14px;
+padding-top: 30px; padding-bottom: 30px; }
+#z{ font-size:24px; color: #333;
+font-weight: 800; padding-left:25px;
+padding-bottom:15px; }
+/*PRICINGPRICINGPRICINGPRICING*/
+
+/*FEATURESFEATURESFEATURESFEATURES*/
+#ka{ padding: 50px 50px 15px; width: 100%; height: 740px;}
+#k{ width: 400px; height: 140px;
+box-shadow: 0 0 10px  rgba(0, 0, 0, 0.75);
+display: inline-block;
+margin-right: 10px; margin-top: 60px; }
+#k h1{ margin-left: 30%;
+font-size: 20px; letter-spacing: -1px;
+padding-top: 1px; padding-left: 30px;}
+#k p{ padding-left:25px; padding-top: 20px;}
+#ka img{ width: 80px; height: 80px;}
+/*FEATURESFEATURESFEATURESFEATURES*/
+
+/*КОМПАНИЯкомпаниКОМПАНИЯкомпаниКОМПАНИЯкомпани*/
+#pic { float: right;}
+#pic img {margin-left: 50px;width: 650px; height: auto; }
+#text { text-align: justify; }
+#COMPANY{ padding: 50px 50px 15px;padding-top: 340px; height: 350px;}
+/*КОМПАНИЯкомпаниКОМПАНИЯкомпаниКОМПАНИЯкомпани*/
+
+/*КОНСУЛЬТАЦияКОНСУЛЬТАЦияКОНСУЛЬТАЦияКОНСУЛЬТАЦия*/
+.container{ padding: 50px 50px 15px;
+height: 560px; padding-top: 150px; 
+padding-bottom: 300px;}
+.d { float:left; width: 43%;
+display: inline-block;
+border: 1px solid #f00;
+text-align: center; height: 500px;
+border: 5px solid #bed2f7;
+display: inline-block;  
+margin-right:50px; }
+.container input {
+height: 95px; width: 635px;
+box-sizing: border-box;
+resize: none; margin: 8px 0;
+box-sizing: border-box;
+border: none;
+border-bottom: 5px solid #bed2f7;}
+/*КОНСУЛЬТАЦияКОНСУЛЬТАЦияКОНСУЛЬТАЦияКОНСУЛЬТАЦия*/
+
+/*footerfooterfooterfooterfooter*/
+footer { padding: 10px 20px;
+background: #373a4b; width: 100%; position: absolute; }  
+#lo { margin-left: 10px; float: left; width: auto;}
+#l { margin-right: 50px; width: auto; float: right; }
+#l p{ color: #faf0e6; }
+/*footerfooterfooterfooterfooter*/
+
+</style>
+
+<script>
+jQuery(function($) {
+$(window).scroll(function(){
+if($(this).scrollTop()>140){
+$('#header').addClass('fixed');
+}
+else if ($(this).scrollTop()<140){
+$('#header').removeClass('fixed');
+}
+});
+});
+</script>
+
+</head>
+<body>
+
+
+
+	<div id="header" >
+
+		<div id="navigation">
+        
+			<div id = "logo">
+				<h1> G-CARD </h1>
+				<p>inspir to buy </p>
+			</div>	
+		
+			<ul id="menu">
+				<li><a href="#ABOUT"  >ABOUT</a></li>
+				<li><a href="#ka">FEATURES</a></li>
+				<li><a href="#PRICING">PRICING</a></li>
+				<li><a href="#container">CONSULTATION</a></li>
+				<li><a href="#COMPANY">COMPANY</a></li>
+			</ul>
+
+			<div id="knopki">
+			
+ <button style= "color:white; 
+background-color:#36f; height: 50px; font-size:16px;
+ border:none;text-align: center; margin-bottom: 16px; 
+ margin-top: 0px; margin-left: 60px; ">	GET STARTED </button>
+ 
+				
+				<p> FREE TRIAL </p>
+			</div>
+
+		</div>
+	
+	</div>
+	
+<div class="slider">
+		
+  <input type="radio" name="switch" id="btn1" checked> 
+  <input type="radio" name="switch" id="btn2">
+  <input type="radio" name="switch" id="btn3">
+  <input type="radio" name="switch" id="btn4"> 
+    
+ <div class="slider-inner">
+    <div class="slides">
+	
+      <div id="slaid">
+	  	<h1> customize and manage </h1>
+		<h1 > your product card </h1>
+		<p>Customize your product card to product an unsurpassed effect,</br> and to make it convenient
+		for your customers and you </p>	
+		<img style=" height: 350px; width:auto; position:absolute;    margin-left:600px;    margin-top:-250px;" src="s.jpg">
+		</div>
+	  
+      <div id="slaid">
+	  	<h1> customize and manage </h1>
+		<h1> your product card </h1>
+		<p>Customize your product card to product an unsurpassed effect,</br> and to make it convenient
+		for your customers and you</p>	
+	   </div>
+	   
+      <div id="slaid">
+	  	<h1> customize and manage </h1>
+		<h1> your product card </h1>
+		<p>Customize your product card to product an unsurpassed effect,</br> and to make it convenient
+		for your customers and you</p>	
+	  </div>
+	  
+	  <div id="slaid">
+	  	<h1> customize and manage </h1>
+		<h1> your product card </h1>
+		<p>Customize your product card to product an unsurpassed effect,</br> and to make it convenient
+		for your customers and you</p>
+
+
+
+
+		
+		</div>
+	  
+    </div>
+  </div>
+  
+   
+<button style= " margin-top:50px;  margin-bottom:50px;
+	border:3px solid #36f; color:#36f; background-color:white; 
+	height: 50px; font-size:16px;"> LEARN MORE</button>
+   
+  <div class="switch">                
+    <label for="btn1"></label>
+    <label for="btn2"></label>
+    <label for="btn3"></label>
+	<label for="btn4"></label>
+  </div>
+  
+   
+  
+  
+  
+  
+ 
+  
+  
+  
+  
+  
+</div>
+
+
+
+<div id="ABOUT">
+ 
+<h1>ABOUT</h1>	
+ <div id="picture">
+   <img src="Страница.jpg">
+  </div>
+  <div id="kontent">
+  
+ <p style=" font-weight: bold; font-size:22px; color: #333; margin-top: 100px;"> G-CAR </p> 
+<p>G-CARD extension is an environment for customization and editing of product cards for Shopify. Designed to simplify the use and administration of an online store on the Shopify
+platform, the extension is responsible for the following tasks: editing the product card; displaying data inside the product card, dividing into languages, adding main and subsequent
+photos, displaying information in sections.</p>
+ 
+<a style=" color: #36f; display: block; margin-top: 40px;" href="">GET AN FREE TRIAL &#8594;</a>
+	
+ 
+   
+  </div>
+   </div>
+<div id="ka">
+	
+	<h1 style="line-height:2.5; color:#333; " > FEATURES </h1>
+	
+		<div style="box-shadow: 0 0 10px  rgba(0, 0, 0, 0.75); width: 80px; height: 80px; position: absolute; top: 1300px; left: 85px; ">
+		<img src="3.jpg" alt="">
+		</div>	
+		<div style="box-shadow: 0 0 10px  rgba(0, 0, 0, 0.75); width: 80px; height: 80px; position: absolute; top: 1300px; left: 495px; ">
+		<img src="2.jpg" alt="">		
+		</div>	
+		<div style="box-shadow: 0 0 10px  rgba(0, 0, 0, 0.75);width: 80px; height: 80px; position: absolute; top: 1300px; left: 905px;">
+		<img src="1.jpg" alt="">
+		</div>	
+		
+		<div id="k">
+		<h1  style=" color:#333;  "> CONVENIENCE </h1>
+		<p> G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD </p>
+		</div>	
+		
+		<div id="k">
+		<h1> PERFORMANCE </h1>
+		<p>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD </p>
+		</div>	
+		
+		<div id="k">
+		<h1> SELLING </h1>
+		<p style="margin: 0";>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD </p>
+		</div>	
+		
+		</br>
+		
+		<div style= "background:  #fff; box-shadow: 0 0 10px  rgba(0, 0, 0, 0.75);  width: 80px; height: 80px; position: absolute; top: 1505px; left: 85px; ">
+			
+		</div>	
+		<div style="background:  #fff;	 box-shadow: 0 0 10px  rgba(0, 0, 0, 0.75);  width: 80px; height: 80px; position: absolute; top: 1505px; left: 495px;">
+		
+		</div>	
+		<div style=" background:  #fff;	box-shadow: 0 0 10px  rgba(0, 0, 0, 0.75); width: 80px; height: 80px; position: absolute; top: 1505px; left: 905px;">
+			
+		</div>	
+		
+		<div id="k">
+		<h1> CONVENIENCE </h1>
+		<p style="margin: 0";>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD </p>
+		</div>		
+		
+		<div id="k">
+		<h1> CONVENIENCE </h1>
+		<p style="margin: 0";>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD </p>
+		</div>	
+		
+		<div id="k">
+		<h1> CONVENIENCE </h1>
+		<p style="margin: 0";>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD </p>
+		</div>	
+				
+		</br>
+		
+		<div style=" background:  #fff; box-shadow: 0 0 10px  rgba(0, 0, 0, 0.75); width: 80px; height: 80px; position: absolute; top: 1710px; left: 85px; ">
+
+		</div>	
+		<div style=" background:  #fff; box-shadow: 0 0 10px  rgba(0, 0, 0, 0.75); width: 80px; height: 80px; position: absolute; top: 1710px; left: 495px;">
+		
+		</div>	
+		<div style=" background:  #fff; box-shadow: 0 0 10px  rgba(0, 0, 0, 0.75); width: 80px; height: 80px; position: absolute; top: 1710px; left: 905px; ">
+		
+		</div>
+		
+		<div id="k">
+		<h1> CONVENIENCE </h1>
+		<p style="margin: 0";>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD </p>
+		</div>	
+		
+		<div id="k">
+		<h1> CONVENIENCE </h1>
+		<p style="margin: 0";>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD </p>
+		</div>	
+		
+		<div id="k">
+		<h1> CONVENIENCE </h1>
+		<p style="margin: 0";>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD </p>
+		</div>	
+		
+		</br>
+	</div>
+<div id="PRICING">
+	<h1  style="line-height:2.5;  "> PRICING </h1>
+	<div id="karta" style="border-top: 15px solid #FF0000;     margin-right: 0px; ">
+		<p id="z"> ENTERPRISE</p>
+		<p id="c"> Monthly</p>
+		<p id="c"> Yearly</p>
+		<h1 id="c1"> 240$</h1>
+		<h1 id="c1"> 180$</h1>
+<p  id="c2" style= "color: #36f;  padding-left:25px;display: inline;line-height: 0; padding-left: 40px;">Save up to 25% </p>
+<p  id="c2" style= "display: inline;line-height: 0;">with yearly plan</p>
+		<ul>
+		<li><p>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD
+		</p></li>
+		<li><p>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD
+		</p></li>		
+		<li><p>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD
+		</p></li>
+		<li><p>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD
+		</p></li>		
+		</ul>
+		
+	<div class="arrow-1"> <a style="color: #36f; text-align: center; margin-bottom: 30px; display: block; margin-top: 30px;" href="#k2">GET STARTED &#8594;</a>
+</div>	
+		
+	</div>
+	<div id="karta" style="border-top: 15px solid #FFD700; ">
+		<p id="z"> SCALE</p>
+		<p id="c"> Monthly</p>
+		<p id="c"> Yearly</p>
+		<h1 id="c1"> 120$</h1>
+		<h1 id="c1"> 90$</h1>
+<p  id="c2" style= "color: #36f;  padding-left:25px;display: inline;line-height: 0; padding-left: 40px;">Save up to 25% </p>
+<p  id="c2" style= "display: inline;line-height: 0;">with yearly plan</p>
+		<ul>
+		<li><p>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD
+		</p></li>
+		<li><p>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD
+		</p></li>		
+		<li><p>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD
+		</p></li>
+		<li><p>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD
+		</p></li>
+		</ul>
+		
+<div class="arrow-1"> <a style="color: #36f; text-align: center; margin-bottom: 30px; display: block; margin-top: 30px;" href="">GET STARTED &#8594;</a>
+</div>		
+		
+		
+	</div>
+	<div id="karta" style=" border-top: 15px solid #36f; ">
+		<p id="z"> PROFESSIONAL</p>
+		<p id="c"> Monthly</p>
+		<p id="c"> Yearly</p>
+		<h1 id="c1"> 40$</h1>
+		<h1 id="c1"> 25$</h1>
+		
+		<p  id="c2" style= "color: #36f;  padding-left:25px;display: inline;line-height: 0; padding-left: 40px;">Save up to 25% </p>
+		<p  id="c2" style= "display: inline;line-height: 0;">with yearly plan</p>
+		
+		<ul>
+		<li><p>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD
+		</p></li>
+		<li><p>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD
+		</p></li>		
+		<li><p>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD
+		</p></li>
+		<li><p>
+		G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD
+		</p></li>
+		</ul>
+		
+<div class="arrow-1"> <button style= "color:white; 
+background-color:#36f; height: 50px; font-size:16px;
+ border:none;text-align: center; display: block; margin-bottom: 16px; 
+ margin-top: 0px; margin-left: 60px; ">	GET STARTED </button>
+</div>
+		
+	</div>
+	
+<div  id="karta" style=" border-top: 15px solid #3f9;">
+<p id="z"> SELF SERVICE</p>
+
+<p id="c"> Monthly</p>
+<p id="c"> Yearly</p>
+
+<h1 id="c1"> 20$</h1>
+<h1 id="c1"> 15$</h1>
+		
+<p  id="c2" style= "color: #36f;  padding-left:25px;display: inline;line-height: 0; padding-left: 40px;">Save up to 25% </p>
+<p  id="c2" style= "display: inline;line-height: 0;">with yearly plan</p>
+		
+<ul>
+<li><p> G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD </p></li>
+<li><p> G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD </p></li>		
+<li><p> G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD </p></li>
+<li><p> G=CARD extension is an environment for customization and editing of product cards for Shopify. G-CARD </p></li>
+</ul>
+
+<div class="arrow-1"> <a style="color: #36f; text-align: center; margin-bottom: 30px; display: block; margin-top: 30px;" href="">GET STARTED &#8594;</a>
+</div>
+</div>
+	
+	
+	<button style= " margin-top:50px;  margin-bottom:50px;
+	border:3px solid #36f; color:#36f; background-color:white; 
+	height: 50px; font-size:16px;"> FREE TRIAL</button>
+	
+	
+</div>
+
+<div id="COMPANY"> 
+<h1  style="line-height:2.5;  " >COMPANY</h1>
+<div id="pic">
+<img src="Здание.jpg" alt="">
+</div>
+<div id="text">
+<p>GRAMMLA - fullstack is a web technology company. We solve the problems of clients who
+are looking for how to post information about themselves on the Internet. Whether it's an
+ordinary one-page website or a large portal with complex functionality and an application.</p>	
+<p> We also develop applications for popular e-commerce platforms. We will create the design
+ourselves, make a prototype, write the code, test and launch the project. We work with Bitrix,
+WordPress, OpenCart, MODX, Shopify, Tilda. However, we always try to offer a site content
+management system of our own design - G-ENGINE.</p>	
+</div>
+</div>	
+<div class="container" id="container">
+	<h1 style="line-height:2.5;" >CONSULTATION</h1>
+	<div class="d">
+	<p style="margin-top:160px; color:#0a0a0a;">
+	Need help with implementation of our appliction and its </br>
+	further use? For your convenience, you can contact us by E-mail. </br>
+	We will tr to solve your question prompti so that our </br>
+	cooperation is as productive and comfortable as possible</p>
+	
+	<p style="display: inline-block; "> &#9993;</p>
+	<p style="text-decoration:  underline; color: #0a0a0a;font-size: 20px;font-weight: 600;display: inline-block; 
+	">   g-card@g-app.com  </p>
+	<p style="display: inline-block; "> &emsp;</p>
+	<p style="display: inline-block; "> &#9993;</p>
+	<p style="text-decoration:  underline; color: #0a0a0a;font-size: 20px;font-weight: 600; display: inline-block; 
+	"> mail@g-app.com </p>
+	
+	</div >
+	
+	<form action="адес програмны обработчика на сервере.php">
+		<div > <input style="border-bottom: 5px solid #36f;" name="name" type="text"> </div>
+		<div > <input name="login" type="text"> </div>
+		<div > <input name="nomer" type="tel"> </div>
+		<div > <input  style="height: 170px;" name="masag" type="text"> </div>	
+	
+	
+<a style="  text-decoration: none;" href="URL">	<p 	style=" color:#99f; left:670px;  position: relative;top:30px;">	SEND </p></a>
+<p style="    left:800px;  bottom:15px;	position: relative;	display: inline;">By clicking the butom you consent to the processing of personal<br>
+ data and agree to the </p>
+<p   style=" text-decoration:underline; display: inline;  left:800px;  bottom:15px;	position: relative;"> privacy policy.</p>	
+</form>
+</div>
+<footer>
+<div id = "l">
+<p  > PRIVACY &#8239;  POLICY  &emsp; &emsp; TERMS &emsp; &emsp; &copy; 2020.G-CARD.ALL rights reserved.</p> 
+</div> 
+<div id = "lo">
+<h1 style="color: #faf0e6; line-height:0";> G-CARD </h1>
+<p  style="color: #faf0e6; line-height:0; margin-left:35px;">inspire to buy </p>
+</div>
+</footer>
+<p style="color: #373a4b; padding-top: 120px; text-align:center;padding-bottom:20px; font-size:11px; text-color: ; ">
+GRAMMLA   &emsp;   G-ENGINE   &emsp;      G-CRM     &emsp;         G-APP   &emsp;    G-SCHOOL </p>
+</body>
+</html>
